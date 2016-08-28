@@ -1,5 +1,15 @@
 .text
+.globl _start
+_start:
+	movq $4,%rax
+	movq $0,%rbx
+	mov bsm,%rcx
+	mov $21,%rdx
+	int $0x80;
 
+	mov $1,%rax
+	mov $0,%rbx
+	int $0x80;
 .data
-
+	bsm:	.ascii "By the name of Allah\n"
 .bss
